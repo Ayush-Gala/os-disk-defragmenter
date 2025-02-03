@@ -1,0 +1,47 @@
+# Desired folder Structure
+
+.
+|_ images_frag
+|    |_disk_frag_1
+|    |_disk_frag_2
+|    |_disk_frag_3
+|
+|_ images_defrag
+|    |_disk_frag_1
+|    |_disk_frag_2
+|    |_disk_frag_3
+|
+|_ disk.h
+|_ defrag.c
+|_ main.c
+|_ diff.py
+|_ Makefile
+
+
+# Instructions to run
+
+1. Cleaning up: To clean the compiled files and output, run-
+`make clean`
+This removes all object files, the defrag executable, and the disk_defrag output file.
+
+2. Compilation: To compile the program-
+`make`
+This will create the 'defrag' executable.
+
+3. Running the program on images_frag/disk_frag_x :
+`make run input=<frag_image_number>`
+Replace <frag_image_number> with the number corresponding to a fragmented image in the images_frag/ folder
+
+Example: This runs the program with images_frag/disk_frag_1 as input.
+`make run input=1`
+
+4. Comparing outputs: To compare the defragmented output with a reference image-
+`make diff input=<defrag_image_number>`
+Replace <defrag_image_number> with the number corresponding to the reference defragmented image in the images_defrag/ folder
+
+Example: This compares disk_defrag with images_defrag/disk_defrag_1 using the diff.py script.
+`make diff input=1`
+
+NOTE:
+
+You can also execute the program as-per steps outlined in the project spec. The program can be compiled by running make from the project root directory. Then run `./defrag <input_image>` to generate the `disk_defrag` output image.
